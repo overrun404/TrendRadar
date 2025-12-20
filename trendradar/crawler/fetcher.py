@@ -21,7 +21,8 @@ class DataFetcher:
     """数据获取器"""
 
     # 默认 API 地址
-    DEFAULT_API_URL = "https://newsnow.busiyi.world/api/s"
+    # DEFAULT_API_URL = "https://newsnow.busiyi.world/api/s"
+    DEFAULT_API_URL = "http://10.80.8.9:4444/api/s"
 
     # 默认请求头
     DEFAULT_HEADERS = {
@@ -46,7 +47,7 @@ class DataFetcher:
         """
         self.proxy_url = proxy_url
         self.api_url = api_url or self.DEFAULT_API_URL
-
+        print(f"配置api_url: {self.api_url}")
     def fetch_data(
         self,
         id_info: Union[str, Tuple[str, str]],

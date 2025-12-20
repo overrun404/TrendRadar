@@ -118,7 +118,7 @@ class NewsAnalyzer:
         self.update_info = None
         self.proxy_url = None
         self._setup_proxy()
-        self.data_fetcher = DataFetcher(self.proxy_url)
+        self.data_fetcher = DataFetcher(self.proxy_url, self.ctx.config["API_URL"])
 
         # 初始化存储管理器（使用 AppContext）
         self._init_storage_manager()

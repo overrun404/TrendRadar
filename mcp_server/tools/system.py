@@ -145,7 +145,9 @@ class SystemManagementTools:
             if crawler_config.get("use_proxy"):
                 proxy_url = crawler_config.get("proxy_url")
             
-            fetcher = DataFetcher(proxy_url=proxy_url)
+            api_url = crawler_config.get("api_url")
+            
+            fetcher = DataFetcher(proxy_url=proxy_url, api_url=api_url)
             request_interval = crawler_config.get("request_interval", 100)
 
             # 执行爬取

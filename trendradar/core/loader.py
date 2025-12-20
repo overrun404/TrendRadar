@@ -57,6 +57,7 @@ def _load_crawler_config(config_data: Dict) -> Dict:
         "USE_PROXY": crawler_config.get("use_proxy", False),
         "DEFAULT_PROXY": crawler_config.get("default_proxy", ""),
         "ENABLE_CRAWLER": enable_crawler_env if enable_crawler_env is not None else crawler_config.get("enable_crawler", True),
+        "API_URL": crawler_config.get("api_url", "http://10.80.8.9:4444/api/s"),
     }
 
 
@@ -295,7 +296,6 @@ def load_config(config_path: Optional[str] = None) -> Dict[str, Any]:
         config_data = yaml.safe_load(f)
 
     print(f"配置文件加载成功: {config_path}")
-
     # 合并所有配置
     config = {}
 
